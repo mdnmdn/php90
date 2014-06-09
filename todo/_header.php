@@ -3,6 +3,7 @@
 	<head>
 		<title>Titolo pagina</title>
 		<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	</head>
 <body>
 	<div id="page">
