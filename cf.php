@@ -180,7 +180,7 @@ if($cognome){
 		</div>
 		<?php } ?>
 
-		
+
 		<div class="box">
 			<h2 class="box-head">Nuovo codice fiscale</h2>
 
