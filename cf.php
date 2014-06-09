@@ -162,6 +162,7 @@ if($cognome){
 	<head>
 		<title>Calcolo codice fiscale</title>
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	</head>
 <body>
 	<div id="page">
