@@ -188,11 +188,11 @@ if($cognome){
 				<div class="form">
 					<div class="fld">
 						<label>Nome</label>
-						<input type="text" name="nome" value="<?php echo $nome ?>" />
+						<input type="text" name="nome" />
 					</div>
 					<div class="fld">
 						<label>Cognome</label>
-						<input type="text"  name="cognome" value="<?php echo $cognome ?>" />
+						<input type="text"  name="cognome" />
 					</div>
 					<div class="inline-field">
 						<label>Data nascita</label>
