@@ -97,8 +97,6 @@ if($cognome){
 
 	$lettere_mesi = str_split(' ABCDEHLMPRST');
 
-	print_r($lettere_mesi);
-	
 	// $a .= $b  corrisponde a $a = $a . $b
 	$cf_nascita .= $lettere_mesi[$mese];
 
