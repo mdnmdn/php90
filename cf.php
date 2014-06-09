@@ -164,7 +164,7 @@ if($cognome){
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 	</head>
 <body>
-
+	<div id="page">
 	<div id="header" class="no-menu">
 		<h1>Codice Fiscale</h1>
 	</div>
@@ -246,6 +246,6 @@ if($cognome){
 			title="The Sweetest CSS Templates WorldWide">Chocotemplates.com</a>
 		</span>
 	</div>
-
+	</div>
 </body>
 </html>
