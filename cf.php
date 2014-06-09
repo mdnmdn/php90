@@ -93,19 +93,22 @@ if($cognome){
 
 // ------ Data nascita --------------
 
-	$cf_nascita = substr($anno,2);
+	$cf_nascita = substr($anno,2,2);
 
 	$lettere_mesi = str_split(' ABCDEHLMPRST');
 
+	print_r($lettere_mesi);
+	
+	// $a .= $b  corrisponde a $a = $a . $b
 	$cf_nascita .= $lettere_mesi[$mese];
 
-	if ($sesso == 'F') {
+	if ($sesso == 'D') {
 			$giorno = $giorno + 40;
 	}
 
 	// metto lo zero davanti ai numeri con una cifra sola
 	if ($giorno < 10){
-		$giorno = ' ' . $giorno;
+		$giorno = '0' . $giorno;
 	}
 
 	$cf_nascita .= $giorno;
@@ -154,7 +157,6 @@ if($cognome){
 // ------ Fine Calcolo codice controllo  -------------
 
 
-
 }
 ?>
 
@@ -180,6 +182,7 @@ if($cognome){
 		</div>
 		<?php } ?>
 
+		
 		<div class="box">
 			<h2 class="box-head">Nuovo codice fiscale</h2>
 
@@ -187,11 +190,11 @@ if($cognome){
 				<div class="form">
 					<div class="fld">
 						<label>Nome</label>
-						<input type="text" name="nome" />
+						<input type="text" name="nome" value="<?php echo $nome ?>" />
 					</div>
 					<div class="fld">
 						<label>Cognome</label>
-						<input type="text"  name="cognome"  />
+						<input type="text"  name="cognome" value="<?php echo $cognome ?>" />
 					</div>
 					<div class="inline-field">
 						<label>Data nascita</label>
@@ -221,7 +224,7 @@ if($cognome){
 					<div class="fld">
 						<label>Localit&agrave; di nascita</label>
 						<select name="localita">
-							<option value="L219">Torino</option>
+							<option value="L219" >Torino</option>
 							<option value="E715">Lucca</option>
 							<option value="G478">Perugia</option>
 						</select>
@@ -234,7 +237,6 @@ if($cognome){
 				</div>
 			</form>
 		</div>
-
 
 	</div></div>
 
