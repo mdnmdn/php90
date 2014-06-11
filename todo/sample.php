@@ -104,6 +104,8 @@ require '_header.php';
       </div>
    </form>
 </div>
+
+
 <div class="box" >
 <h2 class="box-head">table</h2>
 <!--<div class="buttons">
