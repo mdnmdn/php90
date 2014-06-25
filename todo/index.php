@@ -31,6 +31,7 @@ require '_header.php';
             <th>Titolo</th>
             <th>Descrizione</th>
             <th>Priorit&agrave;</th>
+            <th>Azioni</th>
         </tr>
         
         <?php
@@ -41,6 +42,7 @@ require '_header.php';
                 <td><?php echo $todo['title']; ?></td>
                 <td><?php echo $todo['description']; ?></td>
                 <td><?php echo $todo['priority']; ?></td>
+                <td><a href="todo.php?id=<?php echo $todo['id']; ?>">edit</a></td>
             </tr>
         <?php } ?>
     </table>

@@ -10,8 +10,12 @@ if($action == 'save'){
     $title = $_POST['title'];
     $description = $_POST['description'];
 
-    action_save($title,$description);    
+    action_save($title,$description);
+    
 }
+
+$id = $_GET['id'];
+$todo = action_get_todo($id);
 
 
 // --- fine logica pagina ---
@@ -30,12 +34,12 @@ require '_header.php';
             
             <div class="fld">
                 <label>Titolo</label>
-                <input type="text" name="title" />
+                <input type="text" name="title" value="<?php echo @$todo['title']?>"/>
             </div>
             
             <div class="fld">
                 <label>Descrizione</label>
-                <input type="text" name="description" />
+                <input type="text" name="description" value="<?php echo @$todo['description']?>" />
             </div>    
         
         </div>

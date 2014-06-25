@@ -9,12 +9,14 @@ $password    = 'root';
 
 function action_save($title, $description){
     
-    // salvataggio dei dati
+    $sql = 'insert into todo (title, description) values(:title,:description)';
     
+    $dati = array('title' => $title, 'description' => $description);
     
+    db_execute($sql,$dati);
+   
     header('location: index.php');
 }
-
 
 
 function action_list(){   
@@ -23,6 +25,18 @@ function action_list(){
     $list = db_query($sql);
      
     return $list;
+}
+
+
+function action_get_todo($id){
+    
+    $sql = 'select * from todo where id = :id';
+    
+    $dati = array('id' => $id);
+    
+    $list = db_query_params($sql,$dati);
+    
+    return $list[0];
 }
 
 
@@ -46,6 +60,37 @@ function db_query($sql){
     return $list;
 }
 
+function db_execute($sql, $data){
+    
+    global $conn_string;
+    global $username;
+    global $password;
+    
+    $db = new PDO($conn_string,$username,$password);    
+    
+    $query = $db->prepare($sql);
+    
+    $result = $query->execute($data);
+    
+    
+}
+
+function db_query_params($sql, $data){
+    
+    global $conn_string;
+    global $username;
+    global $password;
+    
+    $db = new PDO($conn_string,$username,$password);    
+    
+    $query = $db->prepare($sql);
+    
+    $query->execute($data);
+    
+    $list = $query->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $list;
+}
 
 
 
