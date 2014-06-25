@@ -7,7 +7,11 @@ require 'lib.todo.php';
 // array con i todo
 $todos = action_list();
 
+
 // --- fine logica pagina ---
+
+$title_page = "APP Todo - Elenco";
+
 // DA QUI IN POI DISEGNIAMO LA PAGINA
 require '_header.php';
 ?>

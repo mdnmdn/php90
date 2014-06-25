@@ -1,6 +1,55 @@
 <?php
+$conn_string = 'mysql:host=localhost;dbname=todo';
+$username    = 'root';
+$password    = 'root';
 
-function action_list(){
+
+
+
+
+function action_save($title, $description){
+    
+    // salvataggio dei dati
+    
+    
+    header('location: index.php');
+}
+
+
+
+function action_list(){   
+    $sql = 'select * from todo order by priority';
+    
+    $list = db_query($sql);
+     
+    return $list;
+}
+
+
+function db_query($sql){
+    
+    global $conn_string;
+    global $username;
+    global $password;
+    
+    $db = new PDO($conn_string,$username,$password);
+    
+    $result = $db->query($sql);
+    
+    if (!$result){
+        print_r($db->errorInfo());
+        die();
+    }
+    
+    $list = $result->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $list;
+}
+
+
+
+
+function action_list_old(){
     $list = array();    
     
     $list[] = array( 'title' => 'fai cose0',
@@ -23,15 +72,5 @@ function action_list(){
  
     return $list;
 }
-
-
-function action_save($title, $description){
-    
-    // salvataggio dei dati
-    
-    
-    header('location: index.php');
-}
-
 
 ?>

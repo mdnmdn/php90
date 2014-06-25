@@ -15,6 +15,9 @@ if($action == 'save'){
 
 
 // --- fine logica pagina ---
+
+$title_page = "APP Todo - Gestione TODO";
+
 // DA QUI IN POI DISEGNIAMO LA PAGINA
 require '_header.php';
 ?>
